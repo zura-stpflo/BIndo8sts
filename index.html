@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi & Soal Bahasa Indonesia Kelas 8 – ASTS 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c8962a;
+    --cream: #faf7f2;
+    --light: #f0ece4;
+    --text: #2c2c2c;
+    --muted: #6b6b6b;
+    --border: #d8d0c0;
+    --accent: #e8f0fe;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 40px 32px 32px;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+  }
+  header .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  header p { font-size: 14px; color: #c8c8c8; }
+
+  /* ── NAV TABS ── */
+  nav {
+    display: flex;
+    background: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    overflow-x: auto;
+  }
+  nav button {
+    flex: 1;
+    min-width: 130px;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #aab0c4;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .25s;
+    white-space: nowrap;
+  }
+  nav button.active, nav button:hover {
+    color: #fff;
+    border-bottom-color: var(--gold);
+    background: rgba(255,255,255,.05);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main { max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  /* ── SECTION ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── MATERI CARD ── */
+  .materi-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+    margin: 32px 0 16px;
+  }
+  .materi-title:first-child { margin-top: 0; }
+
+  .box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .box h3 {
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .box p, .box li { font-size: 14.5px; color: var(--text); }
+  .box ul { padding-left: 20px; }
+  .box ul li { margin-bottom: 4px; }
+
+  .struktur-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .stk-item {
+    background: var(--light);
+    border-radius: 6px;
+    padding: 12px 14px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .stk-item .num {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+  }
+  .stk-item .name { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .stk-item .desc { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+  table.tbl { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; }
+  table.tbl th { background: var(--navy); color: #fff; padding: 9px 12px; text-align: left; }
+  table.tbl td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  table.tbl tr:nth-child(even) td { background: var(--light); }
+
+  /* ── SOAL ── */
+  .soal-header {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 6px 6px 0 0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .soal-header .num-badge {
+    background: var(--gold);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .soal-header .soal-title { font-size: 14px; opacity: .85; }
+
+  .soal-body {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 18px 20px;
+  }
+  .kutipan {
+    background: var(--accent);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 4px 4px 0;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    color: #333;
+    line-height: 1.65;
+  }
+  .kutipan .sumber {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .pertanyaan {
+    font-size: 14.5px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--navy);
+  }
+  .opsi-list { list-style: none; padding: 0; }
+  .opsi-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background .15s;
+    margin-bottom: 3px;
+  }
+  .opsi-list li:hover { background: var(--light); }
+  .opsi-list li.benar { background: #d4edda; }
+  .opsi-list li.salah { background: #fce4e4; }
+  .opsi-list li .huruf {
+    font-weight: 700;
+    color: var(--navy);
+    min-width: 20px;
+  }
+
+  .show-answer-btn {
+    margin-top: 14px;
+    padding: 7px 18px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    transition: background .2s;
+  }
+  .show-answer-btn:hover { background: var(--gold); }
+  .jawaban-info {
+    display: none;
+    margin-top: 10px;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #2e7d32;
+  }
+
+  .bagian-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #fff;
+    background: var(--navy);
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 36px 0 8px;
+    border-left: 5px solid var(--gold);
+  }
+  .kutipan-block {
+    background: var(--accent);
+    border: 1px solid #c8d8f8;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .kutipan-block strong { color: var(--navy); }
+
+  .puisi-block {
+    background: #fffbf2;
+    border: 1px solid #e8d8a0;
+    border-radius: 6px;
+    padding: 18px 24px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 2;
+    font-style: italic;
+  }
+  .puisi-block .judul { font-style: normal; font-weight: 700; color: var(--navy); font-size: 15px; margin-bottom: 10px; }
+  .puisi-block .penyair { font-style: normal; font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  /* progress */
+  .progress-bar-wrap {
+    position: sticky; top: 0; z-index: 10;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 12px; color: var(--muted);
+  }
+  .progress-bar-wrap .bar {
+    flex: 1;
+    height: 6px;
+    background: var(--light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-bar-wrap .bar-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 3px;
+    transition: width .4s;
+  }
+
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  @media print {
+    nav, .show-answer-btn, .progress-bar-wrap { display: none; }
+    .section { display: block !important; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="label">Kelas 8 SMP · Bahasa Indonesia · ASTS 2 · T.A. 2025/2026</div>
+  <h1>Materi &amp; Soal Latihan<br>Bahasa Indonesia</h1>
+  <p>50 Soal Pilihan Ganda · Teks Ulasan · Teks Fiksi · Puisi</p>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('materi')">📚 Ringkasan Materi</button>
+  <button onclick="showTab('soal')">✏️ Soal Latihan (1–50)</button>
+</nav>
+
+<!-- ══════════════ MATERI ══════════════ -->
+<main>
+<div class="section active" id="tab-materi">
+
+  <!-- A. TEKS ULASAN -->
+  <h2 class="materi-title">A. Teks Ulasan</h2>
+
+  <div class="box">
+    <h3>📌 Pengertian</h3>
+    <p>Teks ulasan adalah teks yang berisi penilaian atau tanggapan terhadap suatu karya (buku, film, lagu, drama, dll). Tujuannya adalah memberi informasi kepada pembaca tentang kelebihan dan kekurangan karya tersebut.</p>
+  </div>
+
+  <div class="box">
+    <h3>🏗️ Struktur Teks Ulasan</h3>
+    <div class="struktur-grid">
+      <div class="stk-item"><div class="num">1</div><div class="name">Identitas</div><div class="desc">Judul, pengarang/sutradara, tahun, penerbit/produser</div></div>
+      <div class="stk-item"><div class="num">2</div><div class="name">Orientasi</div><div class="desc">Gambaran umum karya yang diulas</div></div>
+      <div class="stk-item"><div class="num">3</div><div class="name">Tafsiran</div><div class="desc">Isi/cerita secara singkat, bagian penting karya</div></div>
+      <div class="stk-item"><div class="num">4</div><div class="name">Evaluasi</div><div class="desc">Kelebihan dan kelemahan karya secara rinci</div></div>
+      <div class="stk-item"><div class="num">5</div><div class="name">Rangkuman</div><div class="desc">Kesimpulan dan rekomendasi untuk pembaca</div></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>🔗 Konjungsi dalam Teks Ulasan</h3>
+    <table class="tbl">
+      <tr><th>Jenis</th><th>Contoh Kata</th></tr>
+      <tr><td>Penambahan</td><td>dan, serta, selain itu, bahkan</td></tr>
+      <tr><td>Pertentangan</td><td>namun, tetapi, akan tetapi, meskipun</td></tr>
+      <tr><td>Penyebaban</td><td>karena, sebab, oleh karena itu</td></tr>
+      <tr><td>Tujuan</td><td>agar, supaya, untuk</td></tr>
+      <tr><td>Urutan</td><td>pertama, kemudian, selanjutnya, akhirnya</td></tr>
+    </table>
+  </div>
+
+  <!-- B. TEKS FIKSI -->
+  <h2 class="materi-title">B. Teks Fiksi (Cerita Pendek)</h2>
+
+  <div class="box">
+    <h3>📌 Unsur Intrinsik Cerita Fiksi</h3>
+    <ul>
+      <li><strong>Tema</strong> – gagasan pokok yang mendasari cerita (misal: persahabatan, kejujuran)</li>
+      <li><strong>Tokoh &amp; Penokohan</strong> – tokoh utama (peran terbesar) &amp; cara penggambaran watak (langsung/tidak langsung)</li>
+      <li><strong>Latar</strong> – tempat, waktu, dan suasana cerita</li>
+      <li><strong>Alur</strong> – urutan peristiwa: maju (kronologis), mundur (flashback), campuran</li>
+      <li><strong>Amanat</strong> – pesan moral yang ingin disampaikan pengarang</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>💬 Makna Kata: Konotasi &amp; Denotasi</h3>
+    <table class="tbl">
+      <tr><th>Jenis</th><th>Pengertian</th><th>Contoh</th></tr>
+      <tr><td><strong>Denotasi</strong></td><td>Makna sebenarnya / makna kamus</td><td>"Bunga" = tanaman berbunga</td></tr>
+      <tr><td><strong>Konotasi</strong></td><td>Makna tambahan / makna kias yang bergantung konteks</td><td>"Bunga desa" = gadis cantik di desa</td></tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>📝 Kaidah Kebahasaan Teks Fiksi</h3>
+    <ul>
+      <li>Menggunakan kata kerja mental (<em>merasa, berpikir, meyakini</em>)</li>
+      <li>Menggunakan majas (perumpamaan, metafora, personifikasi)</li>
+      <li>Penggunaan dialog langsung dan tidak langsung</li>
+      <li>Sudut pandang: orang pertama (<em>aku, saya</em>), orang ketiga (<em>dia, ia, nama tokoh</em>)</li>
+    </ul>
+  </div>
+
+  <!-- C. PUISI -->
+  <h2 class="materi-title">C. Puisi</h2>
+
+  <div class="box">
+    <h3>📌 Unsur-Unsur Puisi</h3>
+    <table class="tbl">
+      <tr><th>Unsur</th><th>Penjelasan</th></tr>
+      <tr><td><strong>Tema</strong></td><td>Pokok pikiran/gagasan utama puisi (alam, cinta, patriotisme, dll)</td></tr>
+      <tr><td><strong>Imaji / Citraan</strong></td><td>Gambaran yang ditangkap indera: penglihatan, pendengaran, perasaan, penciuman, gerak</td></tr>
+      <tr><td><strong>Majas</strong></td><td>Gaya bahasa kiasan: metafora, personifikasi, hiperbola, simile (perumpamaan)</td></tr>
+      <tr><td><strong>Rima</strong></td><td>Persamaan bunyi di akhir baris: a-a-a-a / a-b-a-b / a-a-b-b / bebas</td></tr>
+      <tr><td><strong>Makna / Maksud</strong></td><td>Isi keseluruhan yang ingin disampaikan penyair</td></tr>
+      <tr><td><strong>Amanat</strong></td><td>Pesan atau nilai yang dapat dipetik pembaca</td></tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>🎭 Jenis-Jenis Majas</h3>
+    <table class="tbl">
+      <tr><th>Majas</th><th>Ciri</th><th>Contoh</th></tr>
+      <tr><td>Personifikasi</td><td>Benda mati berlaku seperti manusia</td><td><em>Angin berbisik di telingaku</em></td></tr>
+      <tr><td>Metafora</td><td>Perbandingan langsung tanpa kata pembanding</td><td><em>Engkau mentari hidupku</em></td></tr>
+      <tr><td>Simile</td><td>Perbandingan menggunakan kata: seperti, bagai, laksana, bagaikan</td><td><em>Senyummu seperti fajar pagi</em></td></tr>
+      <tr><td>Hiperbola</td><td>Pengungkapan yang berlebihan</td><td><em>Air mataku mengalir tiada henti</em></td></tr>
+      <tr><td>Repetisi</td><td>Pengulangan kata untuk penegasan</td><td><em>Aku rindu, aku rindu, aku rindu</em></td></tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>✍️ Langkah Menulis Teks Ulasan Puisi</h3>
+    <ol style="padding-left:20px;font-size:14.5px;">
+      <li>Membaca puisi secara keseluruhan</li>
+      <li>Mencatat identitas puisi (judul, penyair, tahun)</li>
+      <li>Memahami tema dan makna puisi</li>
+      <li>Menganalisis unsur-unsur puisi (majas, citraan, rima)</li>
+      <li>Menilai kelebihan dan kekurangan puisi</li>
+      <li>Menulis ulasan secara sistematis</li>
+    </ol>
+  </div>
+
+</div><!-- end materi -->
+
+
+<!-- ══════════════ SOAL ══════════════ -->
+<div class="section" id="tab-soal">
+<div class="progress-bar-wrap">
+  <span id="prog-text">0 / 50 dijawab</span>
+  <div class="bar"><div class="bar-fill" id="bar-fill" style="width:0%"></div></div>
+</div>
+
+<!-- ===== BAGIAN 1: TEKS ULASAN ===== -->
+<div class="bagian-label">Bagian I – Teks Ulasan (Soal 1–11)</div>
+
+<div class="kutipan-block">
+<strong>Bacaan untuk Soal 1–8</strong><br><br>
+<strong>Judul:</strong> Laskar Pelangi | <strong>Pengarang:</strong> Andrea Hirata | <strong>Tahun:</strong> 2005 | <strong>Penerbit:</strong> Bentang Pustaka<br><br>
+Novel <em>Laskar Pelangi</em> karya Andrea Hirata merupakan salah satu novel paling populer di Indonesia. Novel ini mengisahkan perjuangan sepuluh anak di Belitung yang tetap bersemangat belajar meski fasilitas sekolah mereka sangat terbatas. Mereka tergabung dalam kelompok yang dijuluki "Laskar Pelangi" oleh guru mereka, Bu Muslimah.<br><br>
+Kekuatan terbesar novel ini terletak pada karakterisasi tokoh yang hidup dan penuh warna. Setiap tokoh memiliki keunikan tersendiri sehingga pembaca mudah mengenal dan mencintai mereka. Bahasa yang digunakan pun puitis namun tetap mudah dipahami. <strong>Namun</strong>, alur cerita di beberapa bagian terasa lambat sehingga pembaca yang tidak sabar mungkin merasa bosan. <strong>Selain itu</strong>, latar belakang sejarah yang panjang terkadang memperlambat jalannya cerita utama.<br><br>
+Secara keseluruhan, novel ini sangat layak dibaca oleh semua kalangan, terutama remaja yang membutuhkan motivasi dalam meraih mimpi.
+</div>
+
+<!-- Soal 1 -->
+<div class="soal-header"><div class="num-badge">1</div><div class="soal-title">Teks Ulasan – Jenis teks</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Teks di atas merupakan jenis teks...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Teks narasi</li>
+    <li><span class="huruf">B.</span> Teks ulasan</li>
+    <li><span class="huruf">C.</span> Teks eksposisi</li>
+    <li><span class="huruf">D.</span> Teks deskripsi</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Teks ulasan — karena berisi penilaian terhadap sebuah karya (novel).</div>
+</div>
+
+<!-- Soal 2 -->
+<div class="soal-header"><div class="num-badge">2</div><div class="soal-title">Identitas karya</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Berdasarkan kutipan teks di atas, identitas yang sesuai dengan karya yang diulas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Laskar Pelangi, Andrea Hirata, diterbitkan tahun 2000</li>
+    <li><span class="huruf">B.</span> Laskar Pelangi, ditulis oleh Habiburrahman El Shirazy</li>
+    <li><span class="huruf">C.</span> Laskar Pelangi karya Andrea Hirata, diterbitkan Bentang Pustaka tahun 2005</li>
+    <li><span class="huruf">D.</span> Laskar Pelangi, diterbitkan oleh Gramedia Pustaka Utama</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Sesuai dengan identitas yang tercantum di awal bacaan.</div>
+</div>
+
+<!-- Soal 3 -->
+<div class="soal-header"><div class="num-badge">3</div><div class="soal-title">Pernyataan sesuai teks</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Pernyataan yang sesuai dengan isi teks ulasan di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Novel ini mengisahkan perjuangan anak-anak di Belitung yang tetap semangat belajar dalam keterbatasan</li>
+    <li><span class="huruf">B.</span> Novel ini tidak layak dibaca karena alurnya terlalu lambat</li>
+    <li><span class="huruf">C.</span> Tokoh-tokoh dalam novel ini tidak memiliki keunikan masing-masing</li>
+    <li><span class="huruf">D.</span> Bahasa dalam novel ini sangat sulit dipahami</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. Sesuai dengan paragraf pertama bacaan.</div>
+</div>
+
+<!-- Soal 4 -->
+<div class="soal-header"><div class="num-badge">4</div><div class="soal-title">Struktur teks ulasan – Identitas</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Bagian yang menyebutkan "Judul: Laskar Pelangi | Pengarang: Andrea Hirata | Tahun: 2005" merupakan bagian struktur teks ulasan, yaitu...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Orientasi</li>
+    <li><span class="huruf">B.</span> Evaluasi</li>
+    <li><span class="huruf">C.</span> Tafsiran</li>
+    <li><span class="huruf">D.</span> Identitas</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Identitas berisi judul, pengarang, penerbit, dan tahun terbit karya.</div>
+</div>
+
+<!-- Soal 5 -->
+<div class="soal-header"><div class="num-badge">5</div><div class="soal-title">Struktur teks ulasan – Orientasi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kalimat "Novel Laskar Pelangi karya Andrea Hirata merupakan salah satu novel paling populer di Indonesia" merupakan bagian struktur teks ulasan, yaitu...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Identitas</li>
+    <li><span class="huruf">B.</span> Orientasi</li>
+    <li><span class="huruf">C.</span> Evaluasi</li>
+    <li><span class="huruf">D.</span> Rangkuman</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Orientasi adalah pengenalan/gambaran umum karya yang diulas.</div>
+</div>
+
+<!-- Soal 6 -->
+<div class="soal-header"><div class="num-badge">6</div><div class="soal-title">Struktur teks ulasan – Rangkuman</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kalimat "Secara keseluruhan, novel ini sangat layak dibaca oleh semua kalangan..." merupakan bagian struktur teks ulasan, yaitu...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Tafsiran</li>
+    <li><span class="huruf">B.</span> Evaluasi</li>
+    <li><span class="huruf">C.</span> Rangkuman</li>
+    <li><span class="huruf">D.</span> Identitas</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Rangkuman berisi simpulan dan rekomendasi dari pengulas.</div>
+</div>
+
+<!-- Soal 7 -->
+<div class="soal-header"><div class="num-badge">7</div><div class="soal-title">Kelemahan teks ulasan</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Berdasarkan teks ulasan di atas, kelemahan novel <em>Laskar Pelangi</em> adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Alur cerita di beberapa bagian terasa lambat sehingga pembaca bisa merasa bosan</li>
+    <li><span class="huruf">B.</span> Karakter tokoh tidak memiliki keunikan tersendiri</li>
+    <li><span class="huruf">C.</span> Bahasa yang digunakan terlalu sulit dan tidak puitis</li>
+    <li><span class="huruf">D.</span> Cerita tidak mengandung pesan moral apapun</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. Kelemahan disebutkan di paragraf kedua teks ulasan.</div>
+</div>
+
+<!-- Soal 8 -->
+<div class="soal-header"><div class="num-badge">8</div><div class="soal-title">Kelebihan teks ulasan</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kelebihan novel <em>Laskar Pelangi</em> berdasarkan teks ulasan di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Alur cerita sangat cepat dan menegangkan</li>
+    <li><span class="huruf">B.</span> Novel ini sangat pendek sehingga mudah dibaca</li>
+    <li><span class="huruf">C.</span> Karakterisasi tokoh yang hidup dan bahasa yang puitis namun mudah dipahami</li>
+    <li><span class="huruf">D.</span> Diterbitkan oleh penerbit ternama</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Kelebihan disebutkan di paragraf kedua: karakterisasi tokoh dan bahasa yang puitis.</div>
+</div>
+
+<div class="kutipan-block">
+<strong>Bacaan untuk Soal 9–11</strong><br><br>
+"Film ini berhasil menghadirkan kisah yang mengharukan. <u>(1)</u> <strong>Namun</strong>, beberapa adegan terasa kurang natural. <u>(2)</u> <strong>Selain itu</strong>, musik latar yang digunakan sangat mendukung suasana cerita. <u>(3)</u> <strong>Akan tetapi</strong>, ending film ini terasa terburu-buru <strong>sehingga</strong> kurang memuaskan penonton."
+</div>
+
+<!-- Soal 9 -->
+<div class="soal-header"><div class="num-badge">9</div><div class="soal-title">Konjungsi pertentangan</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kata "namun" pada kalimat (1) dalam kutipan di atas berfungsi sebagai konjungsi...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Penambahan</li>
+    <li><span class="huruf">B.</span> Pertentangan</li>
+    <li><span class="huruf">C.</span> Tujuan</li>
+    <li><span class="huruf">D.</span> Sebab-akibat</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. "Namun" menunjukkan pertentangan antara dua hal.</div>
+</div>
+
+<!-- Soal 10 -->
+<div class="soal-header"><div class="num-badge">10</div><div class="soal-title">Konjungsi penambahan</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kata "selain itu" pada kalimat (2) termasuk konjungsi...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Penambahan</li>
+    <li><span class="huruf">B.</span> Pertentangan</li>
+    <li><span class="huruf">C.</span> Penyebaban</li>
+    <li><span class="huruf">D.</span> Urutan</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Selain itu" menambahkan informasi baru.</div>
+</div>
+
+<!-- Soal 11 -->
+<div class="soal-header"><div class="num-badge">11</div><div class="soal-title">Konjungsi sebab-akibat</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kata "sehingga" pada kalimat terakhir kutipan di atas berfungsi sebagai konjungsi...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Pertentangan</li>
+    <li><span class="huruf">B.</span> Penambahan</li>
+    <li><span class="huruf">C.</span> Tujuan</li>
+    <li><span class="huruf">D.</span> Akibat</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. "Sehingga" menyatakan akibat dari sesuatu yang disebutkan sebelumnya.</div>
+</div>
+
+
+<!-- ===== BAGIAN 2: TEKS FIKSI ===== -->
+<div class="bagian-label">Bagian II – Teks Fiksi (Soal 12–23)</div>
+
+<div class="kutipan-block">
+<strong>Bacaan untuk Soal 12–23</strong><br><br>
+Doni dan Raka sudah bersahabat sejak kelas satu SD. Mereka selalu bersama dalam suka dan duka. Suatu hari, Doni menemukan dompet berisi uang banyak di pinggir jalan. Raka langsung berkata, "Don, ambil saja! Tidak ada yang lihat kok!"<br><br>
+Doni menggeleng. Hatinya tidak tenang. Ia berpikir keras — uang itu pasti milik seseorang yang sangat membutuhkan. Dengan langkah mantap, ia membawa dompet itu ke kantor polisi terdekat.<br><br>
+Seminggu kemudian, pemilik dompet, seorang ibu tua bernama Mbok Darmi, datang ke rumah Doni dengan membawa makanan. Matanya berkaca-kaca. "Nak, terima kasih. Uang itu untuk berobat cucuku," bisiknya.<br><br>
+Raka yang menyaksikan kejadian itu diam-diam merasa malu. Ia sadar bahwa ia hampir mengajak sahabatnya untuk berbuat salah. Sejak saat itu, Raka berjanji dalam hatinya untuk selalu jujur.
+</div>
+
+<!-- Soal 12 -->
+<div class="soal-header"><div class="num-badge">12</div><div class="soal-title">Amanat cerita</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Amanat yang paling tepat dari cerita di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Kita harus selalu menolong teman yang sedang kesusahan</li>
+    <li><span class="huruf">B.</span> Kejujuran adalah sifat terpuji yang harus dijaga dalam kehidupan sehari-hari</li>
+    <li><span class="huruf">C.</span> Jangan pernah menemukan dompet di jalan</li>
+    <li><span class="huruf">D.</span> Persahabatan bisa retak karena perbedaan pendapat</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Cerita ini mengajarkan nilai kejujuran melalui tindakan Doni.</div>
+</div>
+
+<!-- Soal 13 -->
+<div class="soal-header"><div class="num-badge">13</div><div class="soal-title">Watak tokoh</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Watak tokoh Doni dalam cerita di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Jujur dan bertanggung jawab</li>
+    <li><span class="huruf">B.</span> Pengecut dan mudah terpengaruh</li>
+    <li><span class="huruf">C.</span> Serakah dan tidak peduli orang lain</li>
+    <li><span class="huruf">D.</span> Sombong dan keras kepala</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. Doni tidak mengambil dompet dan malah melapor ke polisi — mencerminkan kejujuran dan tanggung jawab.</div>
+</div>
+
+<!-- Soal 14 -->
+<div class="soal-header"><div class="num-badge">14</div><div class="soal-title">Tokoh utama</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Tokoh utama dalam cerita di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Raka</li>
+    <li><span class="huruf">B.</span> Mbok Darmi</li>
+    <li><span class="huruf">C.</span> Doni</li>
+    <li><span class="huruf">D.</span> Polisi</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Doni adalah tokoh yang paling banyak berperan dan menjadi pusat cerita.</div>
+</div>
+
+<!-- Soal 15 -->
+<div class="soal-header"><div class="num-badge">15</div><div class="soal-title">Latar tempat</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Latar tempat yang terdapat dalam cerita di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Sekolah dan perpustakaan</li>
+    <li><span class="huruf">B.</span> Pasar dan rumah sakit</li>
+    <li><span class="huruf">C.</span> Kantin dan lapangan</li>
+    <li><span class="huruf">D.</span> Pinggir jalan, kantor polisi, dan rumah Doni</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Ketiga tempat tersebut disebutkan secara jelas dalam cerita.</div>
+</div>
+
+<!-- Soal 16 -->
+<div class="soal-header"><div class="num-badge">16</div><div class="soal-title">Latar waktu</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Berdasarkan cerita, berapa lama jarak antara Doni menemukan dompet hingga pemiliknya datang ke rumahnya?</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Sehari kemudian</li>
+    <li><span class="huruf">B.</span> Seminggu kemudian</li>
+    <li><span class="huruf">C.</span> Sebulan kemudian</li>
+    <li><span class="huruf">D.</span> Dua hari kemudian</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. "Seminggu kemudian, pemilik dompet...datang ke rumah Doni."</div>
+</div>
+
+<!-- Soal 17 -->
+<div class="soal-header"><div class="num-badge">17</div><div class="soal-title">Alur cerita</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Alur yang digunakan dalam cerita di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Alur maju, karena peristiwa diceritakan secara berurutan dari awal hingga akhir</li>
+    <li><span class="huruf">B.</span> Alur mundur, karena cerita dimulai dari akhir</li>
+    <li><span class="huruf">C.</span> Alur campuran, karena ada bagian flashback</li>
+    <li><span class="huruf">D.</span> Tidak memiliki alur yang jelas</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. Cerita diceritakan secara kronologis dari pertemuan Doni & Raka hingga perubahan sikap Raka.</div>
+</div>
+
+<!-- Soal 18 -->
+<div class="soal-header"><div class="num-badge">18</div><div class="soal-title">Urutan peristiwa</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Urutan peristiwa yang benar dalam cerita di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Mbok Darmi datang → Doni menemukan dompet → Raka menyarankan mengambil uang</li>
+    <li><span class="huruf">B.</span> Raka berjanji jujur → Doni ke kantor polisi → Mbok Darmi datang</li>
+    <li><span class="huruf">C.</span> Doni menemukan dompet → Doni ke kantor polisi → Mbok Darmi datang → Raka berjanji jujur</li>
+    <li><span class="huruf">D.</span> Doni ke kantor polisi → Doni menemukan dompet → Raka menyarankan mengambil uang</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Inilah urutan peristiwa yang sesuai dengan isi cerita.</div>
+</div>
+
+<!-- Soal 19 -->
+<div class="soal-header"><div class="num-badge">19</div><div class="soal-title">Kaidah kebahasaan</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kalimat "Hatinya tidak tenang. Ia berpikir keras" menggunakan kata kerja...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Kata kerja fisik</li>
+    <li><span class="huruf">B.</span> Kata kerja mental</li>
+    <li><span class="huruf">C.</span> Kata kerja material</li>
+    <li><span class="huruf">D.</span> Kata kerja imperatif</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. "Berpikir" dan "tidak tenang (merasa)" adalah kata kerja mental yang menggambarkan proses batin tokoh.</div>
+</div>
+
+<!-- Soal 20 -->
+<div class="soal-header"><div class="num-badge">20</div><div class="soal-title">Makna kata konotasi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kalimat "Doni dan Raka selalu bersama dalam suka dan duka." — Makna konotasi kata "duka" dalam kalimat tersebut adalah...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Upacara berkabung</li>
+    <li><span class="huruf">B.</span> Rasa sedih karena kematian</li>
+    <li><span class="huruf">C.</span> Tangisan seseorang</li>
+    <li><span class="huruf">D.</span> Kesulitan dan penderitaan dalam kehidupan</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Dalam konteks ini, "duka" bermakna konotasi yaitu kesulitan dan penderitaan hidup secara umum.</div>
+</div>
+
+<!-- Soal 21 -->
+<div class="soal-header"><div class="num-badge">21</div><div class="soal-title">Makna kata denotasi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kalimat "Ia membawa dompet itu ke kantor polisi terdekat." — Makna denotasi kata "membawa" adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Mengangkut atau membawa sesuatu ke suatu tempat</li>
+    <li><span class="huruf">B.</span> Mempengaruhi orang lain</li>
+    <li><span class="huruf">C.</span> Menyerahkan sesuatu secara resmi</li>
+    <li><span class="huruf">D.</span> Mencuri sesuatu milik orang lain</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. Makna denotasi adalah makna sebenarnya sesuai kamus.</div>
+</div>
+
+<!-- Soal 22 -->
+<div class="soal-header"><div class="num-badge">22</div><div class="soal-title">Kata denotasi dalam ulasan</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Perhatikan kalimat berikut: "Penulis berhasil menghadirkan cerita yang mengalir deras seperti air sungai." Makna denotasi kata "mengalir" adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Membanjiri pikiran pembaca</li>
+    <li><span class="huruf">B.</span> Bergerak dari satu tempat ke tempat lain (tentang cairan)</li>
+    <li><span class="huruf">C.</span> Cerita yang sangat panjang</li>
+    <li><span class="huruf">D.</span> Tulisan yang banyak menggunakan air sebagai simbol</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Makna denotasi "mengalir" adalah pergerakan cairan secara harfiah.</div>
+</div>
+
+<!-- Soal 23 -->
+<div class="soal-header"><div class="num-badge">23</div><div class="soal-title">Makna konotasi dalam teks fiksi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Kalimat "Matanya berkaca-kaca" memiliki makna konotasi, yaitu...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Matanya dipasangi kaca</li>
+    <li><span class="huruf">B.</span> Matanya sangat bening seperti kristal</li>
+    <li><span class="huruf">C.</span> Hampir menangis atau sangat terharu</li>
+    <li><span class="huruf">D.</span> Matanya sakit dan perlu diobati</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. "Berkaca-kaca" adalah ungkapan konotasi yang berarti hampir menangis.</div>
+</div>
+
+
+<!-- ===== BAGIAN 3: PUISI ===== -->
+<div class="bagian-label">Bagian III – Puisi (Soal 24–50)</div>
+
+<!-- Soal 24 -->
+<div class="soal-header"><div class="num-badge">24</div><div class="soal-title">Makna kata dalam puisi</div></div>
+<div class="soal-body">
+  <div class="kutipan">
+    <em>Ibu, kau adalah cahaya<br>
+    Yang menerangi gelapnya malamku<br>
+    Tak pernah padam, tak pernah lelah</em>
+  </div>
+  <p class="pertanyaan">Makna kata "cahaya" dalam kutipan puisi di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Lampu yang menyala di malam hari</li>
+    <li><span class="huruf">B.</span> Sumber kekuatan dan harapan dalam kehidupan</li>
+    <li><span class="huruf">C.</span> Sinar matahari yang terang benderang</li>
+    <li><span class="huruf">D.</span> Warna putih yang menyilaukan mata</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Dalam konteks puisi ini, "cahaya" bermakna kiasan sebagai sumber harapan dan kekuatan dari seorang ibu.</div>
+</div>
+
+<!-- Soal 25 -->
+<div class="soal-header"><div class="num-badge">25</div><div class="soal-title">Langkah menulis teks ulasan puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Urutan langkah yang benar dalam menulis teks ulasan puisi adalah...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Menulis ulasan → Membaca puisi → Menganalisis unsur → Menilai kelebihan</li>
+    <li><span class="huruf">B.</span> Menilai kelebihan → Membaca puisi → Mencatat identitas → Menulis ulasan</li>
+    <li><span class="huruf">C.</span> Menganalisis majas → Membaca puisi → Mencatat identitas → Menulis rangkuman</li>
+    <li><span class="huruf">D.</span> Membaca puisi → Mencatat identitas → Memahami tema → Menganalisis unsur → Menilai → Menulis ulasan</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Inilah urutan langkah yang sistematis dan benar dalam menulis ulasan puisi.</div>
+</div>
+
+<!-- Soal 26 -->
+<div class="puisi-block">
+<div class="judul">Tanah Airku</div>
+<em>
+Hamparan hijau seluas mata memandang<br>
+Gunung-gunung berdiri kokoh menjulang<br>
+Sungai mengalir jernih tiada henti<br>
+Inilah tanah tumpah darahku sendiri
+</em>
+<div class="penyair">— (Puisi untuk Soal 26–34)</div>
+</div>
+
+<div class="soal-header"><div class="num-badge">26</div><div class="soal-title">Tema puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Tema puisi "Tanah Airku" di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Kesedihan dan kerinduan</li>
+    <li><span class="huruf">B.</span> Persahabatan yang abadi</li>
+    <li><span class="huruf">C.</span> Kecintaan terhadap tanah air / keindahan alam Indonesia</li>
+    <li><span class="huruf">D.</span> Perjuangan melawan penjajah</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Seluruh baris puisi menggambarkan keindahan alam tanah air.</div>
+</div>
+
+<!-- Soal 27 -->
+<div class="soal-header"><div class="num-badge">27</div><div class="soal-title">Imaji puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Hamparan hijau seluas mata memandang" mengandung imaji/citraan...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Citraan penglihatan, karena menggambarkan sesuatu yang dapat dilihat</li>
+    <li><span class="huruf">B.</span> Citraan pendengaran, karena menggambarkan suara alam</li>
+    <li><span class="huruf">C.</span> Citraan penciuman, karena menggambarkan bau rerumputan</li>
+    <li><span class="huruf">D.</span> Citraan gerak, karena menggambarkan sesuatu yang bergerak</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Hamparan hijau" dan "mata memandang" menunjukkan citraan penglihatan.</div>
+</div>
+
+<!-- Soal 28 -->
+<div class="soal-header"><div class="num-badge">28</div><div class="soal-title">Analisis tema puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Bukti bahwa tema puisi "Tanah Airku" adalah kecintaan pada alam adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Puisi ini ditulis dengan bahasa yang puitis dan indah</li>
+    <li><span class="huruf">B.</span> Semua baris menggambarkan keindahan alam: hamparan hijau, gunung, dan sungai</li>
+    <li><span class="huruf">C.</span> Penyair menggunakan rima yang beraturan</li>
+    <li><span class="huruf">D.</span> Judul puisi mengandung kata "tanah air"</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Isi setiap baris puisi secara langsung menggambarkan keindahan alam.</div>
+</div>
+
+<!-- Soal 29 -->
+<div class="soal-header"><div class="num-badge">29</div><div class="soal-title">Makna puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Makna keseluruhan puisi "Tanah Airku" adalah...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Penyair merasa sedih melihat kerusakan alam</li>
+    <li><span class="huruf">B.</span> Penyair ingin pergi meninggalkan tanah airnya</li>
+    <li><span class="huruf">C.</span> Penyair mengkritik pemerintah yang tidak menjaga alam</li>
+    <li><span class="huruf">D.</span> Penyair mengungkapkan rasa bangga dan cinta pada keindahan tanah airnya</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Puisi ini penuh dengan gambaran positif tentang tanah air, mencerminkan rasa bangga dan cinta.</div>
+</div>
+
+<!-- Soal 30 -->
+<div class="soal-header"><div class="num-badge">30</div><div class="soal-title">Majas dalam puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Gunung-gunung berdiri kokoh menjulang" menggunakan majas...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Personifikasi, karena gunung digambarkan seolah-olah dapat berdiri seperti manusia</li>
+    <li><span class="huruf">B.</span> Metafora, karena gunung dibandingkan dengan seseorang</li>
+    <li><span class="huruf">C.</span> Simile, karena menggunakan kata "seperti"</li>
+    <li><span class="huruf">D.</span> Hiperbola, karena sangat berlebihan</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Berdiri" adalah kata kerja manusia yang dikenakan pada gunung — inilah ciri personifikasi.</div>
+</div>
+
+<!-- Soal 31 -->
+<div class="soal-header"><div class="num-badge">31</div><div class="soal-title">Perasaan dalam puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Perasaan yang diungkapkan penyair dalam puisi "Tanah Airku" adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Kesedihan dan penyesalan</li>
+    <li><span class="huruf">B.</span> Ketakutan dan kecemasan</li>
+    <li><span class="huruf">C.</span> Kebanggaan dan kecintaan</li>
+    <li><span class="huruf">D.</span> Amarah dan kekecewaan</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Kata-kata seperti "jernih", "kokoh", dan "tanah tumpah darahku" mencerminkan kebanggaan dan kecintaan.</div>
+</div>
+
+<!-- Soal 32 -->
+<div class="soal-header"><div class="num-badge">32</div><div class="soal-title">Melengkapi larik puisi rumpang</div></div>
+<div class="soal-body">
+  <div class="kutipan">
+    <em>
+    Sungai mengalir membawa harapan<br>
+    Membawa mimpi ke muara lautan<br>
+    Aku berdiri di tepian ini<br>
+    ___________________________
+    </em>
+  </div>
+  <p class="pertanyaan">Larik yang paling tepat untuk melengkapi puisi di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Sambil makan dan bermain-main</li>
+    <li><span class="huruf">B.</span> Menatap masa depan penuh keyakinan</li>
+    <li><span class="huruf">C.</span> Melihat ikan berenang di sungai</li>
+    <li><span class="huruf">D.</span> Karena air sungainya kotor sekali</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Larik ini selaras dengan tema harapan dan mimpi yang ada di baris-baris sebelumnya.</div>
+</div>
+
+<!-- Soal 33 -->
+<div class="soal-header"><div class="num-badge">33</div><div class="soal-title">Citraan puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Sungai mengalir jernih tiada henti" dalam puisi "Tanah Airku" mengandung citraan...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Citraan penciuman</li>
+    <li><span class="huruf">B.</span> Citraan pendengaran</li>
+    <li><span class="huruf">C.</span> Citraan perasaan</li>
+    <li><span class="huruf">D.</span> Citraan penglihatan dan gerak</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. "Jernih" = penglihatan; "mengalir tiada henti" = gerak. Baris ini mengandung dua jenis citraan.</div>
+</div>
+
+<!-- Soal 34 -->
+<div class="soal-header"><div class="num-badge">34</div><div class="soal-title">Perasaan dalam puisi (analisis)</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris terakhir "Inilah tanah tumpah darahku sendiri" menunjukkan perasaan penyair, yaitu...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Rasa memiliki dan bangga terhadap tanah airnya</li>
+    <li><span class="huruf">B.</span> Rasa takut kehilangan tanah airnya</li>
+    <li><span class="huruf">C.</span> Rasa ingin meninggalkan kampung halaman</li>
+    <li><span class="huruf">D.</span> Rasa marah kepada orang yang merusak alam</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Tanah tumpah darahku sendiri" mengungkapkan rasa memiliki yang dalam terhadap tanah air.</div>
+</div>
+
+<!-- Soal 35–38: Puisi kedua -->
+<div class="puisi-block">
+<div class="judul">Rindu Ibu</div>
+<em>
+Di balik kesibukan kota yang ramai<br>
+Kusimpan rindu yang dalam di hati<br>
+Bayanganmu selalu hadir tanpa diundang<br>
+Senyummu menjadi obat lelah hari ini
+</em>
+<div class="penyair">— (Puisi untuk Soal 35–38)</div>
+</div>
+
+<!-- Soal 35 -->
+<div class="soal-header"><div class="num-badge">35</div><div class="soal-title">Maksud puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Maksud puisi "Rindu Ibu" di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Penyair merasa kesepian karena jauh dari kota</li>
+    <li><span class="huruf">B.</span> Penyair mengungkapkan kerinduan yang mendalam kepada ibunya di tengah kesibukan</li>
+    <li><span class="huruf">C.</span> Penyair tidak suka tinggal di kota yang ramai</li>
+    <li><span class="huruf">D.</span> Penyair sedang sakit dan membutuhkan obat</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Puisi ini bercerita tentang rindu kepada ibu di tengah kehidupan kota.</div>
+</div>
+
+<!-- Soal 36 -->
+<div class="soal-header"><div class="num-badge">36</div><div class="soal-title">Amanat puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Amanat yang terkandung dalam puisi "Rindu Ibu" adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Jangan tinggal di kota yang ramai</li>
+    <li><span class="huruf">B.</span> Kita harus bekerja keras di kota</li>
+    <li><span class="huruf">C.</span> Janganlah melupakan ibu dan orang tua meski seberapa sibuk pun kita</li>
+    <li><span class="huruf">D.</span> Senyum adalah obat terbaik untuk semua penyakit</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Puisi ini mengingatkan agar tidak melupakan ibu di tengah kesibukan hidup.</div>
+</div>
+
+<!-- Soal 37 -->
+<div class="soal-header"><div class="num-badge">37</div><div class="soal-title">Makna konotasi dalam puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Makna konotasi frasa "Senyummu menjadi obat lelah hari ini" adalah...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Senyum ibu adalah resep dokter yang harus diminum</li>
+    <li><span class="huruf">B.</span> Ibu adalah seorang dokter yang pintar mengobati</li>
+    <li><span class="huruf">C.</span> Senyum dapat menyembuhkan penyakit fisik</li>
+    <li><span class="huruf">D.</span> Mengingat senyum ibu membuat hati terasa tenang dan semangat kembali</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. "Obat lelah" adalah konotasi yang berarti penawar rasa lelah secara batin.</div>
+</div>
+
+<!-- Soal 38 -->
+<div class="soal-header"><div class="num-badge">38</div><div class="soal-title">Analisis makna puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Bayanganmu selalu hadir tanpa diundang" dalam puisi "Rindu Ibu" bermakna...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Penyair selalu teringat kepada ibunya kapan saja dan di mana saja</li>
+    <li><span class="huruf">B.</span> Ibu penyair sering datang berkunjung tanpa memberi tahu dulu</li>
+    <li><span class="huruf">C.</span> Penyair melihat bayangan ibunya secara nyata</li>
+    <li><span class="huruf">D.</span> Ibu penyair sudah meninggal dunia</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Bayangan hadir tanpa diundang" berarti kenangan/ingatan tentang ibu selalu muncul secara tiba-tiba.</div>
+</div>
+
+<!-- Soal 39–50: Puisi ketiga -->
+<div class="puisi-block">
+<div class="judul">Mentari Pagi</div>
+<em>
+Mentari pagi menyapa lemah lembut<br>
+Mengusir gelapnya malam yang kelam<br>
+Burung-burung bernyanyi riang gembira<br>
+Menyambut hari dengan penuh harapan<br><br>
+Embun pagi bagai mutiara jatuh<br>
+Di atas dedaunan yang masih tidur<br>
+Angin berbisik pelan di telingaku<br>
+Mengajakku bangkit dari mimpi panjang
+</em>
+<div class="penyair">— (Puisi untuk Soal 39–50)</div>
+</div>
+
+<!-- Soal 39 -->
+<div class="soal-header"><div class="num-badge">39</div><div class="soal-title">Majas dalam puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Mentari pagi menyapa lemah lembut" menggunakan majas...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Simile</li>
+    <li><span class="huruf">B.</span> Personifikasi</li>
+    <li><span class="huruf">C.</span> Hiperbola</li>
+    <li><span class="huruf">D.</span> Metafora</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. "Menyapa" adalah kata kerja manusia yang dikenakan pada "mentari" — inilah personifikasi.</div>
+</div>
+
+<!-- Soal 40 -->
+<div class="soal-header"><div class="num-badge">40</div><div class="soal-title">Majas dalam puisi (baris 7)</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Angin berbisik pelan di telingaku" menggunakan majas...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Personifikasi</li>
+    <li><span class="huruf">B.</span> Metafora</li>
+    <li><span class="huruf">C.</span> Simile</li>
+    <li><span class="huruf">D.</span> Hiperbola</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Berbisik" adalah tindakan manusia yang dikenakan pada "angin" — personifikasi.</div>
+</div>
+
+<!-- Soal 41 -->
+<div class="soal-header"><div class="num-badge">41</div><div class="soal-title">Makna kata konotasi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Makna konotasi frasa "dedaunan yang masih tidur" pada puisi di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Daun-daun sedang berbaring di tanah</li>
+    <li><span class="huruf">B.</span> Daun-daun yang sudah gugur dari pohon</li>
+    <li><span class="huruf">C.</span> Dedaunan yang masih basah dan belum terkena sinar matahari sepenuhnya</li>
+    <li><span class="huruf">D.</span> Daun-daun yang layu karena tidak mendapat air</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. "Tidur" pada dedaunan bermakna kiasan — daun masih dalam kondisi pagi yang tenang dan basah embun.</div>
+</div>
+
+<!-- Soal 42 -->
+<div class="soal-header"><div class="num-badge">42</div><div class="soal-title">Maksud puisi "Mentari Pagi"</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Maksud puisi "Mentari Pagi" secara keseluruhan adalah...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Penyair merasa takut dengan datangnya pagi hari</li>
+    <li><span class="huruf">B.</span> Penyair menggambarkan cuaca yang sangat panas di pagi hari</li>
+    <li><span class="huruf">C.</span> Penyair ingin terus tidur dan tidak ingin bangun pagi</li>
+    <li><span class="huruf">D.</span> Penyair menggambarkan keindahan dan keceriaan suasana pagi yang mengajak untuk bersemangat</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Seluruh baris puisi menggambarkan keindahan dan energi positif di pagi hari.</div>
+</div>
+
+<!-- Soal 43 -->
+<div class="soal-header"><div class="num-badge">43</div><div class="soal-title">Rima puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Perhatikan bait pertama puisi "Mentari Pagi". Pola rima bait pertama tersebut adalah...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> a-a-a-a (semua baris berima sama)</li>
+    <li><span class="huruf">B.</span> a-b-c-d (rima bebas, setiap baris berbeda)</li>
+    <li><span class="huruf">C.</span> a-b-a-b (silang)</li>
+    <li><span class="huruf">D.</span> a-a-b-b (pasangan)</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. Akhir baris: lembut–kelam–gembira–harapan — tidak berima teratur, sehingga disebut rima bebas.</div>
+</div>
+
+<!-- Soal 44 -->
+<div class="soal-header"><div class="num-badge">44</div><div class="soal-title">Majas simile dalam puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Embun pagi bagai mutiara jatuh" menggunakan majas...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Personifikasi</li>
+    <li><span class="huruf">B.</span> Metafora</li>
+    <li><span class="huruf">C.</span> Simile (perumpamaan)</li>
+    <li><span class="huruf">D.</span> Hiperbola</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Kata "bagai" menunjukkan perbandingan — ciri khas majas simile/perumpamaan.</div>
+</div>
+
+<!-- Soal 45 -->
+<div class="soal-header"><div class="num-badge">45</div><div class="soal-title">Makna konotasi – mutiara</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Makna konotasi kata "mutiara" dalam baris "Embun pagi bagai mutiara jatuh" adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Sesuatu yang berharga, indah, dan bercahaya</li>
+    <li><span class="huruf">B.</span> Perhiasan mahal yang dijual di toko emas</li>
+    <li><span class="huruf">C.</span> Benda keras berwarna putih di dalam kerang</li>
+    <li><span class="huruf">D.</span> Air yang tidak berwarna</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. Dalam puisi, "mutiara" digunakan secara konotatif untuk menggambarkan embun yang berharga dan berkilau.</div>
+</div>
+
+<!-- Soal 46 -->
+<div class="soal-header"><div class="num-badge">46</div><div class="soal-title">Imaji puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Burung-burung bernyanyi riang gembira" mengandung imaji...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Imaji penglihatan</li>
+    <li><span class="huruf">B.</span> Imaji pendengaran</li>
+    <li><span class="huruf">C.</span> Imaji penciuman</li>
+    <li><span class="huruf">D.</span> Imaji perasaan</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. "Bernyanyi" adalah gambaran suara — menunjukkan imaji pendengaran.</div>
+</div>
+
+<!-- Soal 47 -->
+<div class="soal-header"><div class="num-badge">47</div><div class="soal-title">Melengkapi larik rumpang</div></div>
+<div class="soal-body">
+  <div class="kutipan">
+    <em>
+    Pagi hari yang cerah dan indah<br>
+    Mentari bersinar penuh semangat<br>
+    Kuambil langkah dengan penuh tekad<br>
+    ___________________________
+    </em>
+  </div>
+  <p class="pertanyaan">Larik yang paling tepat dan sesuai untuk melengkapi puisi di atas adalah...</p>
+  <ul class="opsi-list" data-jawaban="C">
+    <li><span class="huruf">A.</span> Lalu tidur kembali di kasur empuk</li>
+    <li><span class="huruf">B.</span> Sambil memandangi hujan deras</li>
+    <li><span class="huruf">C.</span> Meraih mimpi yang telah lama kutunggu</li>
+    <li><span class="huruf">D.</span> Mengeluh karena hari begitu panas</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: C. Selaras dengan suasana semangat dan tema meraih mimpi yang ada di baris-baris sebelumnya.</div>
+</div>
+
+<!-- Soal 48 -->
+<div class="soal-header"><div class="num-badge">48</div><div class="soal-title">Analisis isi puisi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Bait kedua puisi "Mentari Pagi" menyampaikan isi berupa...</p>
+  <ul class="opsi-list" data-jawaban="D">
+    <li><span class="huruf">A.</span> Kesedihan penyair karena harus bekerja di pagi hari</li>
+    <li><span class="huruf">B.</span> Gambaran malam yang gelap dan menakutkan</li>
+    <li><span class="huruf">C.</span> Kritik terhadap orang yang malas bangun pagi</li>
+    <li><span class="huruf">D.</span> Gambaran keindahan alam pagi dan ajakan untuk bangkit bersemangat</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: D. Bait kedua menggambarkan embun, daun, angin, dan mengajak bangkit dari tidur — simbol semangat pagi.</div>
+</div>
+
+<!-- Soal 49 -->
+<div class="soal-header"><div class="num-badge">49</div><div class="soal-title">Makna konotasi – mimpi panjang</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Makna konotasi frasa "bangkit dari mimpi panjang" dalam baris terakhir puisi adalah...</p>
+  <ul class="opsi-list" data-jawaban="A">
+    <li><span class="huruf">A.</span> Mulai bersemangat menjalani hidup setelah masa kemalasan atau kelesuan</li>
+    <li><span class="huruf">B.</span> Bangun tidur setelah tertidur sangat lama</li>
+    <li><span class="huruf">C.</span> Bermimpi sesuatu yang indah di malam hari</li>
+    <li><span class="huruf">D.</span> Mengakhiri sebuah cita-cita yang terlalu besar</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: A. "Bangkit dari mimpi panjang" adalah konotasi untuk seseorang yang mulai bersemangat kembali setelah lesu atau pasif.</div>
+</div>
+
+<!-- Soal 50 -->
+<div class="soal-header"><div class="num-badge">50</div><div class="soal-title">Imaji puisi – identifikasi</div></div>
+<div class="soal-body">
+  <p class="pertanyaan">Baris "Mengusir gelapnya malam yang kelam" dalam puisi "Mentari Pagi" mengandung imaji...</p>
+  <ul class="opsi-list" data-jawaban="B">
+    <li><span class="huruf">A.</span> Imaji pendengaran</li>
+    <li><span class="huruf">B.</span> Imaji penglihatan</li>
+    <li><span class="huruf">C.</span> Imaji penciuman</li>
+    <li><span class="huruf">D.</span> Imaji gerak saja</li>
+  </ul>
+  <button class="show-answer-btn" onclick="toggleJawaban(this)">Lihat Jawaban</button>
+  <div class="jawaban-info">✅ Jawaban: B. "Gelapnya malam yang kelam" menggambarkan sesuatu yang dapat dilihat — imaji penglihatan.</div>
+</div>
+
+</div><!-- end soal -->
+</main>
+
+<footer>
+  Disusun berdasarkan Kisi-Kisi ASTS 2 T.A. 2025/2026 · Ika Astriyani, S.Pd. · NIP 199607262022212002
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function toggleJawaban(btn) {
+  const info = btn.nextElementSibling;
+  const visible = info.style.display === 'block';
+  info.style.display = visible ? 'none' : 'block';
+  btn.textContent = visible ? 'Lihat Jawaban' : 'Sembunyikan';
+}
+
+// Click to select answer
+document.querySelectorAll('.opsi-list').forEach(list => {
+  list.querySelectorAll('li').forEach((li, idx) => {
+    li.addEventListener('click', function() {
+      const kunci = list.dataset.jawaban;
+      const letters = ['A','B','C','D'];
+      // reset
+      list.querySelectorAll('li').forEach(x => { x.classList.remove('benar','salah'); });
+      if (letters[idx] === kunci) {
+        li.classList.add('benar');
+      } else {
+        li.classList.add('salah');
+        list.querySelectorAll('li').forEach((x, i) => {
+          if (letters[i] === kunci) x.classList.add('benar');
+        });
+      }
+      updateProgress();
+    });
+  });
+});
+
+function updateProgress() {
+  const total = document.querySelectorAll('.opsi-list').length;
+  const done = document.querySelectorAll('.opsi-list li.benar, .opsi-list li.salah').length;
+  // count unique answered
+  let answered = 0;
+  document.querySelectorAll('.opsi-list').forEach(list => {
+    if (list.querySelector('li.benar, li.salah')) answered++;
+  });
+  document.getElementById('prog-text').textContent = answered + ' / ' + total + ' dijawab';
+  document.getElementById('bar-fill').style.width = (answered / total * 100) + '%';
+}
+</script>
+</body>
+</html>
